@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import About from "../components/About.astro";
+import Cards from "../components/Cards.astro";
+---
+
+<Layout title="Lucas Philippe - Portfolio">
+	<div class="bg-background text-foreground">
+		<section class="h-screen flex items-center justify-center snap-center">
+			<About />
+		</section>
+		<section class="h-screen flex items-center justify-center snap-center overflow-hidden">
+			<Cards />
+		</section>
+	</div>
+</Layout>
+
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap');
+
+	::selection {
+		background-color: #B33030;
+		color: #d6d6d6;
+	}
+</style>
