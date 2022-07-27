@@ -3,17 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Cards from "../components/Cards.astro";
 import Socials from "../components/Socials.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <Layout title="Lucas Philippe - Portfolio">
+	<Navbar />
 	<div class="bg-background text-foreground">
-		<section class="h-screen flex items-center justify-center snap-center overflow-hidden">
+		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="about">
 			<About />
 		</section>
-		<section class="h-screen flex items-center justify-center snap-center overflow-hidden">
+		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="projects">
 			<Cards />
 		</section>
-		<section class="h-screen flex items-center justify-center snap-center overflow-hidden">
+		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="socials">
 			<Socials />
 		</section>
 	</div>
@@ -25,5 +27,9 @@ import Socials from "../components/Socials.astro";
 	::selection {
 		background-color: #B33030;
 		color: #d6d6d6;
+	}
+
+	html {
+		scroll-behavior: smooth;
 	}
 </style>
