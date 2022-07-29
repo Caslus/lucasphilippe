@@ -3,11 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Cards from "../components/Cards/Cards.astro";
 import Socials from "../components/Socials.astro";
-import Navbar from "../components/Navbar/Navbar.astro";
+import Navbar from "../components/Navbar";
 ---
 
 <Layout title="Lucas Philippe - Portfolio">
-	<Navbar />
+	<Navbar client:load />
 	<div class="bg-background text-foreground">
 		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="about">
 			<About />
