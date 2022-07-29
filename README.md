@@ -1,6 +1,6 @@
 # Welcome to my portfolio 🤯
 
-This website was built using [Astro](https://astro.build).
+This website was built using [Astro](https://astro.build) and a bit of [React](https://reactjs.org/).
 
 If you like this portfolio and want to edit it to make it your own, feel free to fork this repository and do whatever you want to it as long as it's still open source, no credits needed though! 😁
 
