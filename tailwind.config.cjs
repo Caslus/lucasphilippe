@@ -43,6 +43,7 @@ module.exports = {
 				"Helvetica",
 				"Arial",
 			],
+			mono: ["Fira Mono", "monospace"],
 		},
 	},
 };
