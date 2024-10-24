@@ -17,13 +17,6 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
-      # - name: Install, build, and upload your site
-      #   uses: withastro/action@v3
-      #   with:
-      #     path: .
-      #     node-version: 20
-      #     package-manager: bun@latest
-
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
