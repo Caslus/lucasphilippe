@@ -19,7 +19,8 @@ const { href, title, body, image } = Astro.props;
 			lg:opacity-0 lg:group-hover:opacity-100 lg:focus-within:opacity-100 lg:duration-500 lg:delay-300">
 				<h1 class="font-bold">{title}</h1>
 				<p>{body}</p>
-				<a href={href} class="bg-primary p-2 rounded-xl text-center hover:brightness-110 active:brightness-50">
+				<a target="_blank" href={href}
+					class="bg-primary p-2 rounded-xl text-center hover:brightness-110 active:brightness-50">
 					Open
 				</a>
 			</div>
