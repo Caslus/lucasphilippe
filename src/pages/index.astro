@@ -1,35 +1,108 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import About from "../components/About.astro";
-import Cards from "../components/Cards/Cards.astro";
-import Socials from "../components/Socials.astro";
-import Navbar from "../components/Navbar";
+const name = "Lucas Philippe";
+const github = "https://github.com/Caslus";
+const linkedin = "https://www.linkedin.com/in/lucasphi/";
+const description = "I’m a software engineer who loves building full-stack applications. I enjoy tinkering with servers and exploring new technologies in my free time.";
+const location = "Curitiba, Brazil";
+
+import Scribble from "../components/Scribble";
 ---
 
-<Layout title="Lucas Philippe - Portfolio">
-	<Navbar client:load />
-	<div class="bg-background text-foreground">
-		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="about">
-			<About />
-		</section>
-		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="projects">
-			<Cards />
-		</section>
-		<section class="h-screen flex items-center justify-center snap-center overflow-hidden" id="socials">
-			<Socials />
-		</section>
-	</div>
-</Layout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/jpg" href="lucas.jpg" />
+		<title>{name}</title>
+	</head>
+	<body>
+		<wrapper>
+			<div>
+				<code>👋 Hi, my name is</code>
+				<h1>{name}</h1>
+				<p>{description}</p>
+				<p>📍 {location}</p>
+				<links>
+					<a href={github}><img src="github-mark-white.svg" />GitHub</a>
+					<a href={linkedin}><img src="linkedin-white.svg" />LinkedIn</a>
+					<a href="/resume.pdf"><img src="resume-white.svg" />Resume</a>
+				</links>
+			</div>
+			<img src="lucas.jpg" alt="An image of me flying a black and red skydive canopy" />
+		</wrapper>
+		<background>
+			<Scribble client:idle />
+		</background>
+	</body>
+</html>
 
-<style is:global>
-	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=Fira+Mono&wght@400&display=swap');
-
-	::selection {
-		background-color: #B33030;
-		color: #d6d6d6;
+<style>
+	body {
+		background-color: #0b0909;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+		margin: 0;
+		padding: 0;
 	}
 
-	html {
-		scroll-behavior: smooth;
+	wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		height: 100dvh;
+		gap: 3rem;
+
+		@media screen and (max-width: 800px) {
+			flex-direction: column;
+		}
+	}
+	div {
+		width: 25rem;
+	}
+	h1 {
+		color: #d6d6d6;
+		margin: 0;
+	}
+	p,
+	code {
+		color: #8c8c8c;
+	}
+	img {
+		width: 20rem;
+		border-radius: 1rem;
+	}
+
+	background {
+		position: fixed;
+		width: 60rem;
+		top: 50dvh;
+		left: 50vw;
+		transform: translateY(-50%) translateX(-50%);
+		z-index: -1;
+	}
+
+	links {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+
+		img {
+			width: 1rem;
+			margin-right: 0.5rem;
+			border-radius: 0;
+		}
+
+		a {
+			color: #d6d6d6;
+			text-decoration: none;
+		}
+
+		a:hover,
+		a:focus,
+		a:active {
+			text-decoration: underline;
+		}
 	}
 </style>
