@@ -26,7 +26,15 @@ jobs:
           path: . # The root location of your Astro project inside the repository. (optional)
           node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           package-manager: bun@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-
+          
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v2.0.1
+        
+      - name: Compile Typst File
+        run: |
+          typst compile src/templates/resume.typ src/templates/resume.pdf
+          mv src/templates/resume.pdf ./dist/
+          
   deploy:
     needs: build
     runs-on: ubuntu-latest
