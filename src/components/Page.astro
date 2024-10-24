@@ -1,0 +1,36 @@
+---
+import LanguagePicker from "../components/LanguagePicker.astro";
+import Scribble from "../components/Scribble.astro";
+import Base from "../components/Base.astro";
+
+import type { UIStrings } from "../interfaces/i18n";
+import { getLangFromUrl, useTranslation } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const translation = useTranslation(lang as keyof UIStrings);
+
+const github = "https://github.com/Caslus";
+const linkedin = "https://www.linkedin.com/in/lucasphi/";
+const url = "https://lucasphilippe.com";
+---
+
+<Base>
+	<LanguagePicker />
+	<wrapper>
+		<div>
+			<code>👋 {translation("greeting")}</code>
+			<h1>{translation("name")}</h1>
+			<p>{translation("description")}</p>
+			<p>📍 {translation("location")}</p>
+			<links>
+				<a href={github}><img src=`${url}/github-mark-white.svg` />{translation("github")}</a>
+				<a href={linkedin}><img src=`${url}/linkedin-white.svg` />{translation("linkedin")}</a>
+				<a href=`${url}/resume.pdf`><img src=`${url}/resume-white.svg` />{translation("resume")}</a>
+			</links>
+		</div>
+		<img src=`${url}/lucas.jpg` alt={translation("image")} />
+	</wrapper>
+	<background>
+		<Scribble />
+	</background>
+</Base>
