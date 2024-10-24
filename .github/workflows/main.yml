@@ -32,6 +32,7 @@ jobs:
 
       - name: Compile Typst File
         run: |
+          mkdir out
           typst compile src/templates/resume.typ out/resume.pdf
 
       - name: Upload artifact
