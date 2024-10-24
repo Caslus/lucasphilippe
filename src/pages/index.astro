@@ -59,6 +59,10 @@ import Scribble from "../components/Scribble.astro";
 	}
 	div {
 		width: 25rem;
+
+		@media screen and (max-width: 450px) {
+			width: 90%;
+		}
 	}
 	h1 {
 		color: #d6d6d6;
@@ -71,6 +75,10 @@ import Scribble from "../components/Scribble.astro";
 	img {
 		width: 20rem;
 		border-radius: 1rem;
+
+		@media screen and (max-width: 450px) {
+			max-width: 90%;
+		}
 	}
 
 	background {
