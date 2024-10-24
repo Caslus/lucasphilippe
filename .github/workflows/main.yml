@@ -16,12 +16,6 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        with:
-          path: .
-          node-version: 20
-          package-manager: bun@latest
 
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
@@ -30,14 +24,16 @@ jobs:
         run: |
           typst compile src/templates/resume.typ dist/resume.pdf
 
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
+        with:
+          path: .
+          node-version: 20
+          package-manager: bun@latest
+
       - name: List dist folder contents for debugging
         run: |
           ls -al dist
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "dist"
 
   deploy:
     needs: build
