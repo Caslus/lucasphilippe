@@ -22,6 +22,7 @@ jobs:
 
       - name: Compile Typst File
         run: |
+          mkdir dist
           typst compile src/templates/resume.typ dist/resume.pdf
 
       - name: Install, build, and upload your site
