@@ -1,7 +1,9 @@
 ---
 const name = "Lucas Philippe";
+const title = `${name} - Software Engineer`;
 const github = "https://github.com/Caslus";
 const linkedin = "https://www.linkedin.com/in/lucasphi/";
+const url = "https://lucasphilippe.com/";
 const description = "I’m a software engineer who loves building full-stack applications. I enjoy tinkering with servers and exploring new technologies in my free time.";
 const location = "Curitiba, Brazil";
 
@@ -14,12 +16,19 @@ import Scribble from "../components/Scribble.astro";
 		<link rel="icon" type="image/jpg" href="lucas.jpg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Lucas Philippe's personal page" />
-		<meta name="keywords" content="Lucas Philippe, software engineer, full-stack, developer, brazil, curitiba, web development" />
-		<meta name="author" content="Lucas Philippe" />
-		<meta name="language" content="English" />
-		<meta property="og:image" content="lucas.jpg" />
-		<title>{name}</title>
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content=`${description}` />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content=`${description}` />
+		<meta property="og:image" content="/lucas.jpg" />
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content=`${description}` />
+		<meta property="twitter:image" content="/lucas.jpg" />
 	</head>
 	<body>
 		<wrapper>
