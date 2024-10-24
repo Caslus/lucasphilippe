@@ -165,7 +165,6 @@ const Scribble = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setNum((num + 1) % 3);
-			// }, (num % 2) * 900 + 300);
 		}, 500);
 		return () => clearInterval(interval);
 	});
