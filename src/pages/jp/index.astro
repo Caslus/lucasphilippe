@@ -1,14 +1,15 @@
 ---
-const name = "Lucas Philippe";
-const title = `${name} - Software Engineer`;
+const name = "フィリップ・ルカス";
+const romaji = "Lucas Philippe";
+const title = `${name} - ソフトウェア エンジニア`;
 const github = "https://github.com/Caslus";
 const linkedin = "https://www.linkedin.com/in/lucasphi/";
 const url = "https://lucasphilippe.com/";
-const description = "I’m a software engineer who loves building full-stack applications. I enjoy tinkering with servers and exploring new technologies in my free time.";
-const location = "Curitiba, Brazil";
+const description = "フルスタック アプリケーションの構築が好きなソフトウェア エンジニアです。空き時間にはサーバーをいじったり、新しいテクノロジーを探究したりするのが好きです。";
+const location = "クリチバ、ブラジル";
 
-import LanguagePicker from "../components/LanguagePicker.astro";
-import Scribble from "../components/Scribble.astro";
+import Scribble from "../../components/Scribble.astro";
+import LanguagePicker from "../../components/LanguagePicker.astro";
 ---
 
 <html lang="en">
@@ -35,17 +36,20 @@ import Scribble from "../components/Scribble.astro";
 		<LanguagePicker />
 		<wrapper>
 			<div>
-				<code>👋 Hi, my name is</code>
-				<h1>{name}</h1>
+				<name>
+					<code>👋 こんにちは！僕は</code>
+					<h1>{name}</h1>
+					<subtitle>【 {romaji} 】</subtitle>
+				</name>
 				<p>{description}</p>
-				<p>📍 {location}</p>
+				<p class="location">📍 {location}</p>
 				<links>
-					<a href={github}><img src="github-mark-white.svg" />GitHub</a>
-					<a href={linkedin}><img src="linkedin-white.svg" />LinkedIn</a>
-					<a href="/resume.pdf"><img src="resume-white.svg" />Resume</a>
+					<a href={github}><img src="github-mark-white.svg" />ギットハブ</a>
+					<a href={linkedin}><img src="linkedin-white.svg" />リンケディン</a>
+					<a href="/resume.pdf"><img src="resume-white.svg" />履歴書（英語）</a>
 				</links>
 			</div>
-			<img src="lucas.jpg" alt="An image of me flying a black and red skydive canopy" />
+			<img src="lucas.jpg" alt="黒と赤のスカイダイビングキャノピーで乗って飛んでいる私の写真" />
 		</wrapper>
 		<background>
 			<Scribble />
@@ -65,6 +69,7 @@ import Scribble from "../components/Scribble.astro";
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		text-align: right;
 		flex-direction: row;
 		height: 100dvh;
 		gap: 3rem;
@@ -73,20 +78,33 @@ import Scribble from "../components/Scribble.astro";
 			flex-direction: column;
 		}
 	}
+
 	div {
 		width: 25rem;
-
 		@media screen and (max-width: 450px) {
 			width: 90%;
 		}
 	}
-	h1 {
+
+	h1,
+	subtitle {
 		color: #d6d6d6;
 		margin: 0;
 	}
+
 	p,
 	code {
 		color: #8c8c8c;
+	}
+
+	name {
+		display: flex;
+		flex-direction: column;
+		align-items: end;
+	}
+
+	.location {
+		width: 100%;
 	}
 
 	*::selection {
@@ -100,6 +118,10 @@ import Scribble from "../components/Scribble.astro";
 
 		@media screen and (max-width: 450px) {
 			max-width: 90%;
+		}
+
+		@media screen and (max-width: 375px) {
+			max-width: 50%;
 		}
 	}
 
@@ -115,6 +137,7 @@ import Scribble from "../components/Scribble.astro";
 	links {
 		display: flex;
 		flex-direction: row;
+		justify-content: end;
 		gap: 1rem;
 
 		img {

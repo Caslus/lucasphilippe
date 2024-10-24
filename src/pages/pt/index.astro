@@ -1,14 +1,14 @@
 ---
 const name = "Lucas Philippe";
-const title = `${name} - Software Engineer`;
+const title = `${name} - Engenheiro de Software`;
 const github = "https://github.com/Caslus";
 const linkedin = "https://www.linkedin.com/in/lucasphi/";
 const url = "https://lucasphilippe.com/";
-const description = "I’m a software engineer who loves building full-stack applications. I enjoy tinkering with servers and exploring new technologies in my free time.";
-const location = "Curitiba, Brazil";
+const description = "Sou um engenheiro de software que adora construir aplicações full-stack. Em minhas horas vagas, adoro explorar novas tecnologias e brincar com servidores.";
+const location = "Curitiba, Paraná";
 
-import LanguagePicker from "../components/LanguagePicker.astro";
-import Scribble from "../components/Scribble.astro";
+import Scribble from "../../components/Scribble.astro";
+import LanguagePicker from "../../components/LanguagePicker.astro";
 ---
 
 <html lang="en">
@@ -35,17 +35,17 @@ import Scribble from "../components/Scribble.astro";
 		<LanguagePicker />
 		<wrapper>
 			<div>
-				<code>👋 Hi, my name is</code>
+				<code>👋 Oi, meu nome é</code>
 				<h1>{name}</h1>
 				<p>{description}</p>
 				<p>📍 {location}</p>
 				<links>
 					<a href={github}><img src="github-mark-white.svg" />GitHub</a>
 					<a href={linkedin}><img src="linkedin-white.svg" />LinkedIn</a>
-					<a href="/resume.pdf"><img src="resume-white.svg" />Resume</a>
+					<a href="/resume.pdf"><img src="resume-white.svg" />Currículo (Inglês)</a>
 				</links>
 			</div>
-			<img src="lucas.jpg" alt="An image of me flying a black and red skydive canopy" />
+			<img src="lucas.jpg" alt="Uma foto minha voando com um paraquedas preto e vermelho" />
 		</wrapper>
 		<background>
 			<Scribble />
