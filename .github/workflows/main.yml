@@ -32,8 +32,12 @@ jobs:
 
       - name: Compile Typst File
         run: |
-          typst compile src/templates/resume.typ src/templates/resume.pdf
-          mv src/templates/resume.pdf ./dist/
+          typst compile src/templates/resume.typ out/resume.pdf
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "out"
 
   deploy:
     needs: build
