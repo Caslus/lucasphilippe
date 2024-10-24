@@ -17,24 +17,48 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
 
+      # - name: Install, build, and upload your site
+      #   uses: withastro/action@v3
+      #   with:
+      #     path: .
+      #     node-version: 20
+      #     package-manager: bun@latest
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Setup Node (Bun)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install
+        shell: "bash"
+        working-directory: .
+        run: bun install
+
+      - name: Build
+        shell: "bash"
+        working-directory: .
+        run: bun run build
+
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
       - name: Compile Typst File
         run: |
-          mkdir dist
           typst compile src/templates/resume.typ dist/resume.pdf
-
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
-        with:
-          path: .
-          node-version: 20
-          package-manager: bun@latest
 
       - name: List dist folder contents for debugging
         run: |
           ls -al dist
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "dist/"
 
   deploy:
     needs: build
