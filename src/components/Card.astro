@@ -1,0 +1,21 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	href: string;
+	image: string;
+}
+const { href, title, body, image } = Astro.props;
+---
+
+<div class="group flex flex-col justify-center items-center h-full m-8 w-80">
+	<img src={image} class="rounded-3xl" />
+	<div
+		class="lg:opacity-0 lg:-translate-x-20 group-hover:opacity-100 group-hover:translate-x-0 focus-within:opacity-100 focus-within:translate-x-0  transition-all flex items-center justify-center p-1">
+		<div>
+			<h1 class="font-bold">{title}</h1>
+			<p>{body}</p>
+		</div>
+		<a href={href} class="bg-primary p-2 rounded-xl text-center hover:brightness-110 active:brightness-50">Open</a>
+	</div>
+</div>
