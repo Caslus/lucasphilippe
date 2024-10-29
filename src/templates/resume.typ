@@ -35,9 +35,7 @@
     #line(length: 100%, stroke: 0.25pt)
   ]
 ]
-#show link: it => [
-  #underline(stroke: 0.1mm + gray, offset: 0.75mm, it.body)
-]
+#show link: underline
 
 #let title(
   name: "",
