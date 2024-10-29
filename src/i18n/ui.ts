@@ -26,6 +26,7 @@ export const ui: UIStrings = {
 		github: "GitHub",
 		linkedin: "LinkedIn",
 		resume: "Resume",
+		resumeFile: "resume.pdf",
 	},
 	pt: {
 		name: "Lucas Philippe",
@@ -34,7 +35,8 @@ export const ui: UIStrings = {
 		description: "Sou um engenheiro de software que adora construir aplicações full-stack. Em minhas horas vagas, adoro explorar novas tecnologias e brincar com servidores.",
 		location: "Curitiba, Paraná",
 		image: "Uma foto minha voando com um paraquedas preto e vermelho",
-		resume: "Currículo (Inglês)",
+		resume: "Currículo",
+		resumeFile: "resume-pt.pdf",
 	},
 	jp: {
 		name: "フィリップ・ルカス",

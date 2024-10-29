@@ -13,6 +13,7 @@ export interface UI {
 	github?: string;
 	linkedin?: string;
 	resume?: string;
+	resumeFile?: string;
 }
 
 export interface UIStrings {
