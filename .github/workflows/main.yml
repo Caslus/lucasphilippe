@@ -40,9 +40,11 @@ jobs:
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
-      - name: Compile Typst File
-        run: |
-          typst compile src/templates/resume.typ dist/resume.pdf
+      - name: Compile English Resume
+        run: typst compile src/templates/resume.typ dist/resume.pdf
+
+      - name: Compile Portuguese Resume
+        run: typst compile src/templates/resume-pt.typ dist/resume-pt.pdf
 
       - name: List dist folder contents for debugging
         run: |
