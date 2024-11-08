@@ -12,7 +12,7 @@ const url = "https://lucasphilippe.com";
 <html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/jpg" href=`${url}/lucas.jpg` />
+		<link rel="icon" type="image/webp" href=`${url}/lucas.webp` />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{translation("name")} - {translation("occupation")}</title>
@@ -22,12 +22,12 @@ const url = "https://lucasphilippe.com";
 		<meta property="og:url" content={url} />
 		<meta property="og:title" content=`${translation("name")} - ${translation("occupation")}` />
 		<meta property="og:description" content={translation("description")} />
-		<meta property="og:image" content=`${url}/lucas.jpg` />
+		<meta property="og:image" content=`${url}/lucas.webp` />
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={url} />
 		<meta property="twitter:title" content=`${translation("name")} - ${translation("occupation")}` />
 		<meta property="twitter:description" content={translation("description")} />
-		<meta property="twitter:image" content=`${url}/lucas.jpg` />
+		<meta property="twitter:image" content=`${url}/lucas.webp` />
 	</head>
 	<body>
 		<slot />
