@@ -99,7 +99,7 @@
 )[
   #list(
     [Desenvolvimento, implementação, testes, implantação e manutenção de um aplicativo mobile em React Native com mais de 200.000 usuários ativos mensais, em colaboração com designers UI/UX e desenvolvedores backend para garantir uma integração contínua e boa experiência de usuário.],
-    [Colaboração com equipes multidisciplinares, impulsionando decisões estratégicas na construção de uma aplicação web em React e TypeScript, utilizada por todos os clientes.],
+    [Colaboração com equipes multidisciplinares, impulsionando decisões estratégicas na construção de uma aplicação web em React e Typescript, utilizada por todos os clientes.],
     [Integração e unificação de aplicações voltadas ao cliente com três sistemas de faturamento distintos de fornecedores variados, simplificando a jornada do usuário em uma experiência coesa e eficiente.]
   )
 ]

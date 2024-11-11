@@ -97,7 +97,7 @@
 )[
   #list(
     [Designed, implemented, tested, deployed, and maintained a React Native mobile application with over 200,000 monthly active users, collaborating with UX/UI designers and backend developers to ensure seamless integration and user experience.],
-    [Collaborated with multiple teams to drive business decisions while building a React and TypeScript web application used by all customers.],
+    [Collaborated with multiple teams to drive business decisions while building a React and Typescript web application used by all customers.],
     [Integrated and unified customer-facing applications with 3 distinct billing systems from different vendors, simplifying the user journey into a cohesive and efficient experience.]
   )
 ]
