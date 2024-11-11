@@ -147,9 +147,9 @@
 = Habilidades Técnicas
 #list(
   [*Linguagens de programação*: Typescript, Javascript, Go, Java, Python, C\#],
-  [*Desenvolvimento Frontend*: HTML, CSS, React, Angular, React Native, Redux],
+  [*Desenvolvimento Frontend*: HTML, CSS, React, Angular, React Native, Redux, Vite, Tailwind, Jest],
   [*Desenvolvimento Backend*: Node.js, Express, Hono, Java Spring],
-  [*Bancos de dados*: SQL, PostgreSQL, OracleSQL, MySQL, MongoDB],
+  [*Bancos de dados*: SQL, PostgreSQL, OracleSQL, MySQL, MongoDB, Prisma],
   [*DevOps & Cloud*: AWS, Azure, Docker, Docker Compose],
   [*Versionamento & CI/CD*: Git, GitHub, GitHub Actions, Azure Pipelines],
   [*Redes & Segurança*: Redes, DNS, NGINX, SSL/TLS, Segurança de API],

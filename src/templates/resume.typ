@@ -143,9 +143,9 @@
 = Technical Skills
 #list(
   [*Programming Languages*: Typescript, Javascript, Go, Java, Python, C\#],
-  [*Frontend Development*: HTML, CSS, React, Angular, React Native, Redux],
+  [*Frontend Development*: HTML, CSS, React, Angular, React Native, Redux, Vite, Tailwind, Jest],
   [*Backend Development*: Node.js, Express, Hono, Java Spring],
-  [*Databases*: SQL, PostgreSQL, OracleSQL, MySQL, MongoDB],
+  [*Databases*: SQL, PostgreSQL, OracleSQL, MySQL, MongoDB, Prisma],
   [*DevOps & Cloud*: AWS, Azure, Docker, Docker Compose],
   [*Version Control & CI/CD*: Git, GitHub, GitHub Actions, Azure Pipelines],
   [*Networking & Security*: Networks, DNS, NGINX, SSL/TLS, API Security],
