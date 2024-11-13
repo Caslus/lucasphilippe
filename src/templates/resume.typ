@@ -93,7 +93,7 @@
   title: "Frontend Developer",
   subtitle: "Ligga Telecom",
   location: "",
-  period: "Jun 2024 - Present",
+  period: "May 2024 - Present",
 )[
   #list(
     [Designed, implemented, tested, deployed, and maintained a React Native mobile application with over 200,000 monthly active users, collaborating with UX/UI designers and backend developers to ensure seamless integration and user experience.],
