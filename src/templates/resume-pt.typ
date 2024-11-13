@@ -158,6 +158,13 @@
 
 = Certificações
 #exp(
+  title: "Certificação Scrum Foundation Professional",
+  subtitle: "Certiprof",
+  location: "",
+  period: "Nov 2024"
+)[]
+
+#exp(
   title: "Certificação Six Sigma White Belt",
   subtitle: "Aveta Business Institute",
   location: "",
