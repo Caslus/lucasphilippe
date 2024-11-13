@@ -205,6 +205,15 @@
 ]
 
 #exp(
+  title: "Hackathon Challenge Based Learning",
+  subtitle: "Apple Developer Academy",
+  location: "",
+  period: "Out 2022"
+)[
+  Utilização de ferramentas de prototipagem e metodologias de design thinking para resolver problemas do mundo real em grupos dinâmicos, apresentando uma solução para os organizadores ao final do evento.
+]
+
+#exp(
   title: "XIX Olimpíada Brasileira de Informática (OBI 2017)",
   subtitle: "UNICAMP",
   location: "",

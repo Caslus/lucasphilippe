@@ -200,6 +200,15 @@
 ]
 
 #exp(
+  title: "Challenge Based Learning Hackathon",
+  subtitle: "Apple Developer Academy",
+  location: "",
+  period: "Oct 2022"
+)[
+  Leveraged prototyping tools and design thinking methodologies to solve real-world problems with dynamic groups, presenting a solution to organizers by the end of the event.
+]
+
+#exp(
   title: "XIX Brazilian Computing Olympiad (OBI 2017)",
   subtitle: "State University of Campinas",
   location: "",
