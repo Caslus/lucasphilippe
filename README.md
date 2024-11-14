@@ -16,7 +16,7 @@ Typst is used for generating my resume because it allows me to focus on content 
 
 ## Author
 
-This is project is built by [Lucas Philippe](https://lucasphilippe.com).
+This project is built by [Lucas Philippe](https://lucasphilippe.com).
 
 ## License
 
