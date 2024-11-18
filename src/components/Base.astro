@@ -1,12 +1,10 @@
 ---
 import type { UIStrings } from "../interfaces/i18n";
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
-import "../styles/index.css";
+import { url } from "../config/config";
 
 const lang = getLangFromUrl(Astro.url);
 const translation = useTranslation(lang as keyof UIStrings);
-
-const url = "https://lucasphilippe.com";
 ---
 
 <html lang={lang}>
@@ -29,7 +27,7 @@ const url = "https://lucasphilippe.com";
 		<meta property="twitter:description" content={translation("description")} />
 		<meta property="twitter:image" content=`${url}/lucas.webp` />
 	</head>
-	<body>
+	<body class="bg-background-dark font-sans m-0 p-0 selection:bg-content-selection selection:text-white">
 		<slot />
 	</body>
 </html>

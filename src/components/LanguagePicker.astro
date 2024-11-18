@@ -8,38 +8,15 @@ const currentLang = getLangFromUrl(Astro.url);
 const langs = languages.filter((language) => language.code !== currentLang);
 ---
 
-<languages>
+<languages class="absolute top-4 right-4 flex gap-4">
 	{
 		langs.map((language, i) => (
 			<>
-				<a href={language.code !== defaultLanguage ? `${url}/${language.code}` : url}>{language.name}</a>
-				{i !== langs.length - 1 && <span>・</span>}
+				<a href={language.code !== defaultLanguage ? `${url}/${language.code}` : url} class="text-content-dark no-underline hover:underline hover:text-title-dark">
+					{language.name}
+				</a>
+				{i !== langs.length - 1 && <span class="text-content-dark select-none">・</span>}
 			</>
 		))
 	}
 </languages>
-
-<style>
-	languages {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		display: flex;
-		gap: 1rem;
-	}
-
-	a,
-	span {
-		color: #8c8c8c;
-		text-decoration: none;
-	}
-
-	span {
-		user-select: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-		color: #d6d6d6;
-	}
-</style>
