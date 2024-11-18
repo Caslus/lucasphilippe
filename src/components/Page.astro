@@ -6,12 +6,10 @@ import Base from "../components/Base.astro";
 import type { UIStrings } from "../interfaces/i18n";
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
 
+import { url, github, linkedin } from "../config/config";
+
 const lang = getLangFromUrl(Astro.url);
 const translation = useTranslation(lang as keyof UIStrings);
-
-const github = "https://github.com/Caslus";
-const linkedin = "https://www.linkedin.com/in/lucasphi/";
-const url = "https://lucasphilippe.com";
 ---
 
 <Base>

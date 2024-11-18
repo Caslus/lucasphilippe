@@ -2,6 +2,8 @@
 import { languages, defaultLanguage } from "../i18n/ui";
 import { getLangFromUrl } from "../i18n/utils";
 
+import { url } from "../config/config";
+
 const currentLang = getLangFromUrl(Astro.url);
 const langs = languages.filter((language) => language.code !== currentLang);
 ---
@@ -10,7 +12,7 @@ const langs = languages.filter((language) => language.code !== currentLang);
 	{
 		langs.map((language, i) => (
 			<>
-				<a href={language.code !== defaultLanguage ? `/${language.code}` : "/"}>{language.name}</a>
+				<a href={language.code !== defaultLanguage ? `${url}/${language.code}` : url}>{language.name}</a>
 				{i !== langs.length - 1 && <span>・</span>}
 			</>
 		))
