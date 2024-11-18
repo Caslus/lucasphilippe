@@ -3,11 +3,11 @@
 	"type": "module",
 	"version": "1.0.0",
 	"scripts": {
-		"dev": "astro dev",
-		"start": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"astro": "astro"
+		"dev": "bunx --bun astro dev",
+		"start": "bunx --bun astro dev",
+		"build": "bunx --bun astro check && bunx --bun astro build",
+		"preview": "bunx --bun astro preview",
+		"astro": "bunx --bun astro"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.4",
@@ -15,5 +15,8 @@
 		"astro": "^4.16.7",
 		"tailwindcss": "^3.4.15",
 		"typescript": "^5.6.3"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.1.13"
 	}
 }
