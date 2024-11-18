@@ -1,12 +1,11 @@
 ---
 import type { UIStrings } from "../interfaces/i18n";
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
+import { url } from "../config/config";
 import "../styles/index.css";
 
 const lang = getLangFromUrl(Astro.url);
 const translation = useTranslation(lang as keyof UIStrings);
-
-const url = "https://lucasphilippe.com";
 ---
 
 <html lang={lang}>
