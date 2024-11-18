@@ -14,21 +14,27 @@ const translation = useTranslation(lang as keyof UIStrings);
 
 <Base>
 	<LanguagePicker />
-	<wrapper>
-		<div>
-			<code>👋 {translation("greeting")}</code>
-			<h1>{translation("name")}</h1>
-			<p>{translation("description")}</p>
-			<p>📍 {translation("location")}</p>
-			<links>
-				<a href={github}><img src=`${url}/github-mark-white.svg` alt={translation("github")} width="100%" />{translation("github")}</a>
-				<a href={linkedin}><img src=`${url}/linkedin-white.svg` alt={translation("linkedin")} width="100%" />{translation("linkedin")}</a>
-				<a href=`${url}/${translation("resumeFile")}`><img src=`${url}/resume-white.svg` alt={translation("resume")} width="100%" />{translation("resume")}</a>
+	<wrapper class="flex justify-center items-center flex-row h-dvh gap-12 max-md:flex-col">
+		<div class="w-[25rem] max-sm:w-11/12">
+			<code class="text-content-dark text-xs">👋 {translation("greeting")}</code>
+			<h1 class="text-title-dark m-0 font-bold text-3xl">{translation("name")}</h1>
+			<p class="text-content-dark mt-3 leading-tight">{translation("description")}</p>
+			<p class="text-content-dark mt-3">📍 {translation("location")}</p>
+			<links class="flex flex-wrap flex-row gap-4 mt-3 max-2xsm:flex-col">
+				<a href={github} class="text-title-dark no-underline hover:underline focus:underline active:underline flex items-center"
+					><img src=`${url}/github-mark-white.svg` alt={translation("github")} class="w-4 h-4 mr-2 inline" />{translation("github")}</a
+				>
+				<a href={linkedin} class="text-title-dark no-underline hover:underline focus:underline active:underline flex items-center"
+					><img src=`${url}/linkedin-white.svg` alt={translation("linkedin")} class="w-4 h-4 mr-2 inline" />{translation("linkedin")}</a
+				>
+				<a href=`${url}/${translation("resumeFile")}` class="text-title-dark no-underline hover:underline focus:underline active:underline flex items-center"
+					><img src=`${url}/resume-white.svg` alt={translation("resume")} class="w-4 h-4 mr-2 inline" />{translation("resume")}</a
+				>
 			</links>
 		</div>
-		<img src=`${url}/lucas.webp` alt={translation("image")} width="100%" />
+		<img src=`${url}/lucas.webp` alt={translation("image")} class="w-80 rounded-2xl max-sm:w-11/12 max-2xsm:hidden" />
 	</wrapper>
-	<background>
+	<background class="fixed w-[60rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
 		<Scribble />
 	</background>
 </Base>
