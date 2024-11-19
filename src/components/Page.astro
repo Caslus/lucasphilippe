@@ -7,6 +7,7 @@ import type { UIStrings } from "../interfaces/i18n";
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
 
 import { url, github, linkedin } from "../config/config";
+import Social from "./Social.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const translation = useTranslation(lang as keyof UIStrings);
@@ -21,20 +22,14 @@ const translation = useTranslation(lang as keyof UIStrings);
 			<p class="text-content-dark mt-3 leading-tight">{translation("description")}</p>
 			<p class="text-content-dark mt-3">📍 {translation("location")}</p>
 			<links class="flex flex-wrap flex-row gap-4 mt-3 max-2xsm:flex-col">
-				<a href={github} class="text-title-dark no-underline hover:underline focus:underline active:underline flex items-center"
-					><img src=`${url}/github-mark-white.svg` alt={translation("github")} class="w-4 h-4 mr-2 inline" />{translation("github")}</a
-				>
-				<a href={linkedin} class="text-title-dark no-underline hover:underline focus:underline active:underline flex items-center"
-					><img src=`${url}/linkedin-white.svg` alt={translation("linkedin")} class="w-4 h-4 mr-2 inline" />{translation("linkedin")}</a
-				>
-				<a href=`${url}/${translation("resumeFile")}` class="text-title-dark no-underline hover:underline focus:underline active:underline flex items-center"
-					><img src=`${url}/resume-white.svg` alt={translation("resume")} class="w-4 h-4 mr-2 inline" />{translation("resume")}</a
-				>
+				<Social href={github} icon="github" text="github" />
+				<Social href={linkedin} icon="linkedin" text="linkedin" />
+				<Social href={`${url}/${translation("resumeFile")}`} icon="resume" text="resume" />
 			</links>
 		</div>
 		<img src=`${url}/lucas.webp` alt={translation("image")} class="w-80 rounded-2xl max-sm:w-11/12 max-2xsm:hidden" />
 	</wrapper>
-	<background class="fixed w-[60rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10">
+	<background class="fixed w-[60rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-primary">
 		<Scribble />
 	</background>
 </Base>

@@ -4,10 +4,12 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				"background-dark": "#0b0909",
+				"background-dark": "#141212",
 				"title-dark": "#d6d6d6",
 				"content-dark": "#8c8c8c",
 				"content-selection": "#a92e2f88",
+				primary: "#b33030",
+				secondary: "#FFB650",
 			},
 			screens: {
 				"2xsm": "376px",

@@ -12,7 +12,7 @@ const langs = languages.filter((language) => language.code !== currentLang);
 	{
 		langs.map((language, i) => (
 			<>
-				<a href={language.code !== defaultLanguage ? `${url}/${language.code}` : url} class="text-content-dark no-underline hover:underline hover:text-title-dark">
+				<a href={language.code !== defaultLanguage ? `${url}/${language.code}` : url} class="text-content-dark no-underline hover:underline hover:text-secondary focus:underline focus:text-secondary">
 					{language.name}
 				</a>
 				{i !== langs.length - 1 && <span class="text-content-dark select-none">・</span>}

@@ -1,0 +1,22 @@
+---
+import { url } from "../config/config";
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslation } from "../i18n/utils";
+import type { UI, UIStrings } from "../interfaces/i18n";
+
+interface Props {
+	href: string;
+	icon: string;
+	text: keyof UI;
+}
+
+const { href, icon, text }: Props = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const translation = useTranslation(lang as keyof UIStrings);
+---
+
+<a href={href} class="text-title-dark no-underline hover:underline hover:text-secondary focus:underline focus:text-secondary flex items-center">
+	<Icon name={icon} class="w-4 h-4 mr-2 inline" />
+	{translation(text)}
+</a>
