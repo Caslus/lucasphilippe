@@ -1,6 +1,6 @@
 # Personal Page with Astro and Typst
 
-This is a personal page built using [Astro](https://astro.build/) and [Typst](https://typst.app/), with GitHub Actions automating the build process, generating an up-to-date resume, and deploying to GitHub Pages.
+This is a personal page built using [Astro](https://astro.build/), [Tailwind](https://tailwindcss.com/) and [Typst](https://typst.app/), with GitHub Actions automating the build process, generating an up-to-date resume, and deploying to GitHub Pages.
 
 ## Overview
 
