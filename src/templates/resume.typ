@@ -154,6 +154,13 @@
 
 = Certifications
 #exp(
+  title: "Salesforce Certified AI Associate",
+  subtitle: "Salesforce",
+  location: "",
+  period: "Nov 2024"
+)[]
+
+#exp(
   title: "Scrum Foundation Professional Certificate",
   subtitle: "Certiprof",
   location: "",
