@@ -1,7 +1,7 @@
 // @ts-check
 import tailwindIntegration from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
 import icon from "astro-icon";
+import { defineConfig } from "astro/config";
 import { url } from "./src/config/config";
 
 // https://astro.build/config
