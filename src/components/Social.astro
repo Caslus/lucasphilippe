@@ -16,7 +16,12 @@ const lang = getLangFromUrl(Astro.url);
 const translation = useTranslation(lang as keyof UIStrings);
 ---
 
-<a href={href} class="text-title-dark no-underline hover:underline hover:text-secondary focus:underline focus:text-secondary flex items-center">
+<a
+	href={href}
+	target="_blank"
+	rel="noopener noreferrer"
+	class="text-title-dark no-underline hover:underline hover:text-secondary focus-visible:underline focus-visible:text-secondary flex items-center"
+>
 	<Icon name={icon} class="w-4 h-4 mr-2 inline" />
 	{translation(text)}
 </a>
