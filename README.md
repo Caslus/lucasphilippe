@@ -18,13 +18,13 @@ Typst is used for generating my resume because it allows me to focus on content 
 
 ### Desktop
 
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/desktop/pagespeed.svg)](htmlpreview.github.io?https://raw.githubusercontent.com/Caslus/lucasphilippe/refs/heads/main/lighthouse_results/desktop/lucasphilippe_com.html)
+[![Google Lighthouse PageSpeed Insights](lighthouse_results/desktop/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/Caslus/lucasphilippe/blob/main/lighthouse_results/desktop/lucasphilippe_com.html)
 
 Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Flucasphilippe.com%2F&form_factor=desktop)
 
 ### Mobile
 
-[![Google Lighthouse PageSpeed Insights](lighthouse_results/mobile/pagespeed.svg)](htmlpreview.github.io?https://raw.githubusercontent.com/Caslus/lucasphilippe/refs/heads/main/lighthouse_results/mobile/lucasphilippe_com.html)
+[![Google Lighthouse PageSpeed Insights](lighthouse_results/mobile/pagespeed.svg)](https://htmlpreview.github.io/?https://github.com/Caslus/lucasphilippe/blob/main/lighthouse_results/mobile/lucasphilippe_com.html)
 
 Run the test yourself: [Google Lighthouse PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Flucasphilippe.com%2F&form_factor=mobile)
 
