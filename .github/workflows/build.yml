@@ -47,7 +47,7 @@ jobs:
         run: bun run build
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: "dist/"
           name: "build"
@@ -72,7 +72,7 @@ jobs:
         run: typst compile src/templates/resume-pt.typ dist/resume-pt.pdf
 
       - name: Upload resume artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: "dist/"
           name: "resumes"
