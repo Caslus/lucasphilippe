@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build
 
 on:
   push:
@@ -46,6 +46,15 @@ jobs:
         working-directory: .
         run: bun run build
 
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "dist/"
+          name: "build"
+  compile-resume:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
@@ -55,23 +64,8 @@ jobs:
       - name: Compile Portuguese Resume
         run: typst compile src/templates/resume-pt.typ dist/resume-pt.pdf
 
-      - name: List dist folder contents for debugging
-        run: |
-          ls -al dist
-
-      - name: Upload Pages Artifact
+      - name: Upload resume artifacts
         uses: actions/upload-pages-artifact@v3
         with:
           path: "dist/"
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.actor != 'github-actions[bot]'
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          name: "resumes"

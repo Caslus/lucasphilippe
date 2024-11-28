@@ -23,7 +23,7 @@ env:
 # TRIGGERS
 on:
   workflow_run:
-    workflows: ["Deploy to GitHub Pages"]
+    workflows: ["Deploy"]
     branches: [main]
     types:
       - completed
