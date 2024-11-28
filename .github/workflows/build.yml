@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.actor != 'github-actions[bot]'
     steps:
-    - name: Checkout your repository using git
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
 
       - name: Setup Typst
