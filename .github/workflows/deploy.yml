@@ -22,13 +22,21 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Download build artifact
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
+          workflow: build.yml
+          branch: main
           name: build
+          path: dist/
       - name: Download resume artifact
-        uses: actions/download-artifact@v3
+        uses: dawidd6/action-download-artifact@v6
         with:
+          workflow: build.yml
+          branch: main
           name: resumes
+          path: dist/
+      - name: ls for debugging
+        run: ls -la && cd dist && ls -la
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
