@@ -35,10 +35,10 @@ jobs:
           branch: main
           name: resumes
           path: dist/
-      - name: ls for debugging
-        run: ls -la && cd dist && ls -la
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          path: dist/
