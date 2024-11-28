@@ -51,10 +51,14 @@ jobs:
         with:
           path: "dist/"
           name: "build"
+
   compile-resume:
     runs-on: ubuntu-latest
     if: github.actor != 'github-actions[bot]'
     steps:
+    - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
