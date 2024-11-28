@@ -62,6 +62,9 @@ jobs:
       - name: Setup Typst
         uses: typst-community/setup-typst@v3
 
+      - name: List files for debugging
+        run: ls -la
+
       - name: Compile English Resume
         run: typst compile src/templates/resume.typ dist/resume.pdf
 
