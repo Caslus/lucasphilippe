@@ -1,5 +1,6 @@
 ---
 import { url } from "../config/config";
+import { defaultLanguage } from "../i18n/ui";
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
 import type { UIStrings } from "../interfaces/i18n";
 
@@ -13,6 +14,10 @@ const translation = useTranslation(lang as keyof UIStrings);
 		<link rel="icon" type="image/webp" href=`${url}/lucas.webp` />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="nofollow"/>
+    {lang!==defaultLanguage &&
+    <meta name="robots" content="noindex" />
+    }
 		<title>{translation("name")} - {translation("occupation")}</title>
 		<meta name="title" content=`${translation("name")} - ${translation("occupation")}` />
 		<meta name="description" content={translation("description")} />
