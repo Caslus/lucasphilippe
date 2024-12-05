@@ -6,21 +6,21 @@
 )
 #set text(font: "libertinus serif", size: 10pt, lang: "en")
 #set page(
-  footer: text(8pt, fill: gray)[
-    #grid(
-      columns: (1fr, 1fr),
-      {
-        // typst doesn't have localized datetime yet
-        // https://typst.app/docs/reference/foundations/datetime#format
-        // let fmt = "[month repr:short] [day], [year]"
-        let fmt = "[day]/[month]/[year]"
-        align(left)[
-          Última atualização: #datetime.today().display(fmt)
-        ]
-      },
-      align(right, context(counter(page).display()))
-    )
-  ],
+  // footer: text(8pt, fill: gray)[
+  //   #grid(
+  //     columns: (1fr, 1fr),
+  //     {
+  //       // typst doesn't have localized datetime yet
+  //       // https://typst.app/docs/reference/foundations/datetime#format
+  //       // let fmt = "[month repr:short] [day], [year]"
+  //       let fmt = "[day]/[month]/[year]"
+  //       align(left)[
+  //         Última atualização: #datetime.today().display(fmt)
+  //       ]
+  //     },
+  //     align(right, context(counter(page).display()))
+  //   )
+  // ],
   margin: (
     top: 1.5cm,
     bottom: 1.5cm,

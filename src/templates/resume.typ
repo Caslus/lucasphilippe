@@ -6,18 +6,18 @@
 )
 #set text(font: "libertinus serif", size: 10pt, lang: "en")
 #set page(
-  footer: text(8pt, fill: gray)[
-    #grid(
-      columns: (1fr, 1fr),
-      {
-        let fmt = "[month repr:short] [day], [year]"
-        align(left)[
-          Last update: #datetime.today().display(fmt)
-        ]
-      },
-      align(right, context(counter(page).display()))
-    )
-  ],
+  // footer: text(8pt, fill: gray)[
+  //   #grid(
+  //     columns: (1fr, 1fr),
+  //     {
+  //       let fmt = "[month repr:short] [day], [year]"
+  //       align(left)[
+  //         Last update: #datetime.today().display(fmt)
+  //       ]
+  //     },
+  //     align(right, context(counter(page).display()))
+  //   )
+  // ],
   margin: (
     top: 1.5cm,
     bottom: 1.5cm,
