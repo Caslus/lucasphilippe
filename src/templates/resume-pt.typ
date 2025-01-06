@@ -92,10 +92,17 @@
 
 = Experiência
 #exp(
+  title: "Engenheiro de Software",
+  subtitle: "Bradesco Seguros",
+  location: "",
+  period: "Jan 2025 - Presente",
+)[]
+
+#exp(
   title: "Desenvolvedor Frontend",
   subtitle: "Ligga Telecom",
   location: "",
-  period: "Jun 2024 - Presente",
+  period: "Jun 2024 - Dez 2024",
 )[
   #list(
     [Desenvolvimento, implementação, testes, implantação e manutenção de um aplicativo mobile em React Native com mais de 200.000 usuários ativos mensais, em colaboração com designers UI/UX e desenvolvedores backend para garantir uma integração contínua e boa experiência de usuário.],
