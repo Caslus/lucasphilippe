@@ -6,18 +6,6 @@
 )
 #set text(font: "libertinus serif", size: 10pt, lang: "en")
 #set page(
-  // footer: text(8pt, fill: gray)[
-  //   #grid(
-  //     columns: (1fr, 1fr),
-  //     {
-  //       let fmt = "[month repr:short] [day], [year]"
-  //       align(left)[
-  //         Last update: #datetime.today().display(fmt)
-  //       ]
-  //     },
-  //     align(right, context(counter(page).display()))
-  //   )
-  // ],
   margin: (
     top: 1.5cm,
     bottom: 1.5cm,
@@ -94,7 +82,13 @@
   subtitle: "Bradesco Seguros",
   location: "",
   period: "Jan 2025 - Present",
-)[]
+)[
+  #list(
+    [Coordinated a team of 6 external developers alongside another internal employee, leading maintenance and optimization efforts for the company's refunding system, which processes over \$3 million USD daily.],
+    [Investigated and resolved production issues by analyzing logs, debugging, and improving system performance, ensuring stability for 5,000+ simultaneous users.],
+    [Monitored application health using Dynatrace and Grafana, optimized backend and frontend services using Java and Angular, and maintained data integrity across OracleSQL and MongoDB databases in both microservices and monolithic architectures.]
+  )
+]
 
 #exp(
   title: "Frontend Developer",
@@ -143,10 +137,12 @@
 )[
   #list(
     [Elected Vice-President of the Software Engineering Academic Center in 2024, successfully representing over 400 students and leading a collaborative effort to orchestrate the Polytechnic School Academic Week, promoting teamwork among all 17 courses within the PUCPR Polytechnic School.],
-    [Attended courses such as Data Structures, Algorithms, Databases, Web Development, Cloud Architecture, Big Data and DevOps maintaining a GPA of 3.46.]
+    [Attended courses such as Data Structures, Algorithms, Databases, Web Development, Cloud Architecture, Big Data and DevOps maintaining a GPA of 3.5.]
   )
 ]
 
+// just so it doesn't crop the list
+\ 
 = Technical Skills
 #list(
   [*Programming Languages*: Typescript, Javascript, Go, Java, Python, C\#],
@@ -160,13 +156,6 @@
 )
 
 = Certifications
-#exp(
-  title: "Salesforce Certified AI Associate",
-  subtitle: "Salesforce",
-  location: "",
-  period: "Nov 2024"
-)[]
-
 #exp(
   title: "Scrum Foundation Professional Certificate",
   subtitle: "Certiprof",
@@ -189,7 +178,7 @@
 )[]
 
 #exp(
-  title: "Santander 2024 – AWS Certification Training",
+  title: "Santander 2024 - AWS Certification Training",
   subtitle: "DIO",
   location: "",
   period: "May 2024"
@@ -245,13 +234,4 @@
   period: "Aug 2016"
 )[
   Received the public choice award for the best game developed during the 2016 Paralympic Game Jam, a 48-hour game development competition.
-]
-
-#exp(
-  title: "Volunteer",
-  subtitle: "Colégio Saint Germain",
-  location: "",
-  period: "Feb 2015 - Dec 2017"
-)[
-  Collaborated with fellow volunteers to create thermal blankets from styrofoam for donation to underserved nursing homes, contributing to community welfare during the winter months.
 ]

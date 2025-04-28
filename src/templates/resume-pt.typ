@@ -6,21 +6,6 @@
 )
 #set text(font: "libertinus serif", size: 10pt, lang: "en")
 #set page(
-  // footer: text(8pt, fill: gray)[
-  //   #grid(
-  //     columns: (1fr, 1fr),
-  //     {
-  //       // typst doesn't have localized datetime yet
-  //       // https://typst.app/docs/reference/foundations/datetime#format
-  //       // let fmt = "[month repr:short] [day], [year]"
-  //       let fmt = "[day]/[month]/[year]"
-  //       align(left)[
-  //         Última atualização: #datetime.today().display(fmt)
-  //       ]
-  //     },
-  //     align(right, context(counter(page).display()))
-  //   )
-  // ],
   margin: (
     top: 1.5cm,
     bottom: 1.5cm,
@@ -96,7 +81,15 @@
   subtitle: "Bradesco Seguros",
   location: "",
   period: "Jan 2025 - Presente",
-)[]
+)[
+  #list(
+    [Coordenação de uma equipe de 6 desenvolvedores externos junto com outro colaborador interno, liderando os esforços de manutenção e otimização do sistema de reembolso da empresa, que processa mais de 15 milhões de reais diariamente.],
+    [Investigação e resolução de problemas em produção por meio da análise de logs, depuração e melhoria do desempenho do sistema, garantindo a estabilidade para mais de 5.000 usuários simultâneos.],
+  [
+    Monitoramento da saúde de aplicações utilizando Dynatrace e Grafana, otimização de serviços backend e frontend com Java e Angular, manutenção da integridade de bancos de dados OracleSQL e MongoDB em arquiteturas tanto de microsserviços quanto monolíticas.
+  ]
+  )
+]
 
 #exp(
   title: "Desenvolvedor Frontend",
@@ -165,13 +158,6 @@
 
 = Certificações
 #exp(
-  title: "Salesforce Certified AI Associate",
-  subtitle: "Salesforce",
-  location: "",
-  period: "Nov 2024"
-)[]
-
-#exp(
   title: "Certificação Scrum Foundation Professional",
   subtitle: "Certiprof",
   location: "",
@@ -193,7 +179,7 @@
 )[]
 
 #exp(
-  title: "Santander 2024 – Preparatório Certificação AWS",
+  title: "Santander 2024 - Preparatório Certificação AWS",
   subtitle: "DIO",
   location: "",
   period: "Mai 2024"
@@ -251,13 +237,4 @@
   period: "Ago 2016"
 )[
   Recebimento do prêmio de melhor jogo por voto popular, desenvolvido durante a Paralympic Game Jam de 2016, uma competição intensa de 48 horas dedicada ao desenvolvimento de jogos.
-]
-
-#exp(
-  title: "Voluntário",
-  subtitle: "Colégio Saint Germain",
-  location: "",
-  period: "Fev 2015 - Dez 2017"
-)[
-  Atuação com outros voluntários na confecção de cobertores térmicos de isopor para doação a lares de idosos, proporcionando conforto e aquecimento a uma população vulnerável durante os meses de inverno, contribuindo assim para o bem-estar e a dignidade da comunidade.
 ]
