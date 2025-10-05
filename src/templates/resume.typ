@@ -17,7 +17,7 @@
 #set par(leading: 0.45em)
 
 #show heading: it => [
-  #set text(10pt, weight: "light")
+  #set text(10pt, weight: "bold")
   #pad(bottom: 0.2mm)[
     #pad(top: 0pt, bottom: -10pt, it.body)
     #line(length: 100%, stroke: 0.25pt)
@@ -65,15 +65,15 @@
   name: name,
   subtitles: (
     "+55 (41) 99580-0680",
-    link("mailto:lucas.philippe.nunes@gmail.com")[lucas.philippe.nunes\@gmail.com],
+    link("mailto:lucas.phi@pm.me")[lucas.phi\@pm.me],
     "Curitiba, Brazil",
-    link("https://www.linkedin.com/in/lucasphi/")[Linkedin],
+    link("https://www.linkedin.com/in/lucasphi/")[LinkedIn],
     link("https://github.com/Caslus")[Github],
   )
 )
 
 = Summary
-*Software Engineer* with experience designing, developing and testing software applications in agile environments, effectively collaborating with cross-functional teams to deliver high-quality code using *React, Typescript, Node and Go*. Fluent in English and Portuguese, with intermediate Spanish and basic Japanese proficiency.
+*Software Engineer* with technical leadership experience, guiding development teams and maintaining high-availability enterprise systems. Proven ability to enhance system performance and stability in large-scale financial applications processing millions of dollars daily. Expertise spans modern stacks (*React, TypeScript, Go, Node.js*) and enterprise technologies (*Java, Spring, OracleSQL*). Fluent in English and Portuguese, with intermediate Spanish and basic Japanese proficiency.
 
 
 = Experience
@@ -84,9 +84,11 @@
   period: "Jan 2025 - Present",
 )[
   #list(
-    [Coordinated a team of 6 external developers alongside another internal employee, leading maintenance and optimization efforts for the company's refunding system, which processes over \$3 million USD daily.],
-    [Investigated and resolved production issues by analyzing logs, debugging, and improving system performance, ensuring stability for 5,000+ simultaneous users.],
-    [Monitored application health using Dynatrace and Grafana, optimized backend and frontend services using Java and Angular, and maintained data integrity across OracleSQL and MongoDB databases in both microservices and monolithic architectures.]
+    [Lead a sustainment team of 6 analysts responsible for the stability and optimization of a critical reimbursement system processing over \$3 million USD daily.],
+    [Serve as the primary technical contact for business stakeholders during production incidents, communicating impact, gathering requirements for fixes, and coordinating resolution strategies.],
+    [Direct root cause analysis for production issues using code debugging and log analysis (Dynatrace, Grafana), ensuring high availability for over 5,000 simultaneous users.],
+    [Develop targeted bug fixes, performance enhancements, and stability improvements with Java and Spring to resolve active incidents and prevent their recurrence.
+    ]
   )
 ]
 
@@ -98,7 +100,7 @@
 )[
   #list(
     [Designed, implemented, tested, deployed, and maintained a React Native mobile application with over 200,000 monthly active users, collaborating with UX/UI designers and backend developers to ensure seamless integration and user experience.],
-    [Collaborated with multiple teams to drive business decisions while building a React and Typescript web application used by all customers.],
+    [Partnered with product and business teams to translate strategic goals into key features for a customer-facing web application built with React and TypeScript.],
     [Integrated and unified customer-facing applications with 3 distinct billing systems from different vendors, simplifying the user journey into a cohesive and efficient experience.]
   )
 ]
@@ -136,26 +138,44 @@
   period: "Jan 2021 - Dec 2025 (Expected)"
 )[
   #list(
-    [Elected Vice-President of the Software Engineering Academic Center in 2024, successfully representing over 400 students and leading a collaborative effort to orchestrate the Polytechnic School Academic Week, promoting teamwork among all 17 courses within the PUCPR Polytechnic School.],
-    [Attended courses such as Data Structures, Algorithms, Databases, Web Development, Cloud Architecture, Big Data and DevOps maintaining a GPA of 3.5.]
+    [Elected Vice-President of the Software Engineering Academic Center, representing over 400 students and leading the organization of the Polytechnic School Academic Week.]
   )
 ]
 
 // just so it doesn't crop the list
-\ 
+\
 = Technical Skills
 #list(
-  [*Programming Languages*: Typescript, Javascript, Go, Java, Python, C\#],
-  [*Frontend Development*: HTML, CSS, React, Angular, React Native, Redux, Vite, Tailwind, Jest],
-  [*Backend Development*: Node.js, Express, Hono, Java Spring],
-  [*Databases*: SQL, PostgreSQL, OracleSQL, MySQL, MongoDB, Prisma],
-  [*DevOps & Cloud*: AWS, Azure, Docker, Docker Compose],
-  [*Version Control & CI/CD*: Git, GitHub, GitHub Actions, Azure Pipelines],
-  [*Networking & Security*: Networks, DNS, NGINX, SSL/TLS, API Security],
-  [*Server Management*: Linux, Bash scripting, SSH, NGINX]
+  [*Languages*: Typescript, Javascript, Java, Go],
+  [*Frontend*: HTML, CSS, React, Angular, React Native],
+  [*Backend*: Node.js, Spring],
+  [*Databases*: SQL, PostgreSQL, OracleSQL, MySQL, MongoDB],
+  [*DevOps & Cloud*: AWS, Azure, Docker, Git, CI/CD (GitHub Actions, Azure Pipelines)],
+  [*Server Management*: Linux, Bash Scripting, NGINX]
 )
 
 = Certifications
+#exp(
+  title: "AWS Certified Cloud Practitioner (CLF-C02)",
+  subtitle: "Amazon Web Services (AWS)",
+  location: "",
+  period: "Sep 2025"
+)[]
+
+#exp(
+  title: "Red Hat Training: Getting Started with Linux Fundamentals (RH104)",
+  subtitle: "Red Hat",
+  location: "",
+  period: "May 2025"
+)[]
+
+#exp(
+  title: "AI Associate",
+  subtitle: "Salesforce",
+  location: "",
+  period: "Nov 2024"
+)[]
+
 #exp(
   title: "Scrum Foundation Professional Certificate",
   subtitle: "Certiprof",
@@ -164,24 +184,10 @@
 )[]
 
 #exp(
-  title: "Six Sigma White Belt Certification",
-  subtitle: "Aveta Business Institute",
-  location: "",
-  period: "Jul 2024"
-)[]
-
-#exp(
-  title: "Web Application Development with React JS",
+  title: "Web Application Development with React",
   subtitle: "Pontifical Catholic University of Paraná",
   location: "",
   period: "Jun 2024"
-)[]
-
-#exp(
-  title: "Santander 2024 - AWS Certification Training",
-  subtitle: "DIO",
-  location: "",
-  period: "May 2024"
 )[]
 
 #exp(
@@ -204,7 +210,7 @@
   title: "Volunteer",
   subtitle: "Instituto Água e Terra (IAT)",
   location: "",
-  period: "Sep 2024 - Present"
+  period: "Sep 2024 - Sep 2025"
 )[
   Worked as part of a dedicated team to assist in environmental conservation efforts, transporting essential materials such as stone and wood to restore hiking trails in the hills of Curitiba.
 ]
