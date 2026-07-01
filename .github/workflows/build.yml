@@ -68,8 +68,8 @@ jobs:
       - name: Compile English Resume
         run: typst compile src/templates/resume.typ dist/resume.pdf
 
-      - name: Compile Portuguese Resume
-        run: typst compile src/templates/resume-pt.typ dist/resume-pt.pdf
+      # - name: Compile Portuguese Resume
+      #   run: typst compile src/templates/resume-pt.typ dist/resume-pt.pdf
 
       - name: Upload resume artifacts
         uses: actions/upload-artifact@v4
