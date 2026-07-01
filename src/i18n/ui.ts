@@ -38,7 +38,6 @@ export const ui: UIStrings = {
 		location: "Curitiba, Paraná",
 		image: "Uma foto minha voando com um paraquedas preto e vermelho",
 		resume: "Currículo",
-		resumeFile: "resume-pt.pdf",
 	},
 	jp: {
 		name: "フィリップ・ルカス",
