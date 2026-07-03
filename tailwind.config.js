@@ -5,8 +5,8 @@ export default {
 		extend: {
 			colors: {
 				"background-dark": "#0e0c0c",
-				"title-dark": "#d6d6d6",
-				"content-dark": "#8c8c8c",
+				"title-dark": "hsl(0, 0%, 90%)",
+				"content-dark": "hsl(0, 0%, 75%)",
 				"content-selection": "#a92e2f88",
 				primary: "#b33030",
 				secondary: "#FFB650",
