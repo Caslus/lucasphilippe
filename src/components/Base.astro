@@ -4,6 +4,8 @@ import { defaultLanguage } from "../i18n/ui";
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
 import type { UIStrings } from "../interfaces/i18n";
 
+import BackgroundTexture from "./BackgroundTexture.astro";
+
 const lang = getLangFromUrl(Astro.url);
 const translation = useTranslation(lang as keyof UIStrings);
 ---
@@ -14,25 +16,40 @@ const translation = useTranslation(lang as keyof UIStrings);
 		<link rel="icon" type="image/webp" href=`${url}/lucas.webp` />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-    <meta name="robots" content="nofollow"/>
-    {lang!==defaultLanguage &&
-    <meta name="robots" content="noindex" />
-    }
+		<meta name="robots" content="nofollow" />
+		{lang !== defaultLanguage && <meta name="robots" content="noindex" />}
 		<title>{translation("name")} - {translation("occupation")}</title>
-		<meta name="title" content=`${translation("name")} - ${translation("occupation")}` />
+		<meta
+			name="title"
+			content=`${translation("name")} - ${translation("occupation")}`
+		/>
 		<meta name="description" content={translation("description")} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={url} />
-		<meta property="og:title" content=`${translation("name")} - ${translation("occupation")}` />
+		<meta
+			property="og:title"
+			content=`${translation("name")} - ${translation("occupation")}`
+		/>
 		<meta property="og:description" content={translation("description")} />
 		<meta property="og:image" content=`${url}/lucas.webp` />
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={url} />
-		<meta property="twitter:title" content=`${translation("name")} - ${translation("occupation")}` />
-		<meta property="twitter:description" content={translation("description")} />
+		<meta
+			property="twitter:title"
+			content=`${translation("name")} - ${translation("occupation")}`
+		/>
+		<meta
+			property="twitter:description"
+			content={translation("description")}
+		/>
 		<meta property="twitter:image" content=`${url}/lucas.webp` />
 	</head>
-	<body class="bg-background-dark font-sans m-0 p-0 selection:bg-content-selection selection:text-white">
-		<slot />
+	<body
+		class="bg-background-dark font-sans m-0 p-0 relative isolate selection:bg-content-selection selection:text-white"
+	>
+		<BackgroundTexture />
+		<main class="relative z-10">
+			<slot />
+		</main>
 	</body>
 </html>

@@ -1,0 +1,81 @@
+<div aria-hidden="true" class="background-texture">
+    <div class="wash"></div>
+    <div class="grain"></div>
+</div>
+
+<style>
+    .background-texture {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    }
+
+    .wash {
+        position: absolute;
+        inset: -12%;
+        background: linear-gradient(
+            180deg,
+            rgba(8, 6, 6, 0.28) 0%,
+            rgba(8, 6, 6, 0.56) 100%
+        );
+    }
+
+    .grain {
+        position: absolute;
+        inset: -100%;
+        opacity: 0.085;
+        background-image: url("/grain.svg");
+        background-repeat: repeat;
+        background-size: 140px 140px;
+        background-position: center;
+        filter: contrast(170%) brightness(92%);
+        mix-blend-mode: soft-light;
+        animation: grainDrift 8s steps(10) infinite;
+        will-change: transform;
+    }
+
+    @keyframes grainDrift {
+        0%,
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        10% {
+            transform: translate3d(-4%, -8%, 0);
+        }
+
+        20% {
+            transform: translate3d(-10%, -12%, 0);
+        }
+
+        30% {
+            transform: translate3d(-3%, -7%, 0);
+        }
+
+        40% {
+            transform: translate3d(-11%, -15%, 0);
+        }
+
+        50% {
+            transform: translate3d(-5%, -9%, 0);
+        }
+
+        60% {
+            transform: translate3d(-13%, -18%, 0);
+        }
+
+        70% {
+            transform: translate3d(-6%, -10%, 0);
+        }
+
+        80% {
+            transform: translate3d(-14%, -16%, 0);
+        }
+
+        90% {
+            transform: translate3d(-7%, -11%, 0);
+        }
+    }
+</style>
