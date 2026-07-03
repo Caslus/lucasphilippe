@@ -12,33 +12,86 @@ if (
     !prefersReducedMotion &&
     !hasTouchOnlyInput
 ) {
-    const maxTilt = 10;
-    const maxLift = 18;
+    const maxTilt = 12;
+    const maxLift = 24;
     const state = { rotateX: 0, rotateY: 0, lift: 0 };
+    const velocity = { rotateX: 0, rotateY: 0, lift: 0 };
     const target = { rotateX: 0, rotateY: 0, lift: 0 };
     let frame = 0;
+    let lastTickTime = 0;
 
-    const applyTransform = () => {
-        state.rotateX += (target.rotateX - state.rotateX) * 0.08;
-        state.rotateY += (target.rotateY - state.rotateY) * 0.08;
-        state.lift += (target.lift - state.lift) * 0.08;
+    const snap = (value: number, step: number) => Math.round(value / step) * step;
+    const stepSpring = (
+        current: number,
+        targetValue: number,
+        currentVelocity: number,
+        stiffness: number,
+        damping: number,
+        deltaSeconds: number,
+    ) => {
+        const acceleration = (targetValue - current) * stiffness;
+        const nextVelocity = (currentVelocity + acceleration * deltaSeconds) * Math.exp(-damping * deltaSeconds);
+        const nextValue = current + nextVelocity * deltaSeconds;
 
-        photo.style.transform = `perspective(1400px) rotateX(${state.rotateX}deg) rotateY(${state.rotateY}deg) translateY(${state.lift}px)`;
+        return [nextValue, nextVelocity] as const;
+    };
+
+    const applyTransform = (now: number) => {
+        if (!lastTickTime) {
+            lastTickTime = now;
+        }
+
+        const deltaSeconds = Math.min((now - lastTickTime) / 1000, 0.05);
+        lastTickTime = now;
+
+        [state.rotateX, velocity.rotateX] = stepSpring(
+            state.rotateX,
+            target.rotateX,
+            velocity.rotateX,
+            42,
+            6.2,
+            deltaSeconds,
+        );
+        [state.rotateY, velocity.rotateY] = stepSpring(
+            state.rotateY,
+            target.rotateY,
+            velocity.rotateY,
+            42,
+            6.2,
+            deltaSeconds,
+        );
+        [state.lift, velocity.lift] = stepSpring(
+            state.lift,
+            target.lift,
+            velocity.lift,
+            38,
+            5.6,
+            deltaSeconds,
+        );
+
+        const snappedRotateX = snap(state.rotateX, 0.18);
+        const snappedRotateY = snap(state.rotateY, 0.18);
+        const snappedLift = snap(state.lift, 0.25);
+
+        photo.style.transform = `perspective(1400px) rotateX(${snappedRotateX}deg) rotateY(${snappedRotateY}deg) translateY(${snappedLift}px)`;
 
         const settled =
             Math.abs(target.rotateX - state.rotateX) < 0.01 &&
             Math.abs(target.rotateY - state.rotateY) < 0.01 &&
             Math.abs(target.lift - state.lift) < 0.01;
 
-        if (!settled) {
-            frame = window.requestAnimationFrame(applyTransform);
-        } else {
+        if (settled) {
             frame = 0;
+            lastTickTime = 0;
+            return;
         }
+
+        frame = window.requestAnimationFrame(applyTransform);
     };
 
     const startAnimation = () => {
         if (!frame) {
+            lastTickTime = 0;
             frame = window.requestAnimationFrame(applyTransform);
         }
     };

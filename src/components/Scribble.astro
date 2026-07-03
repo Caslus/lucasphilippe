@@ -2,8 +2,13 @@
 
 ---
 
-<svg viewBox="0 0 800 800">
-	<g fill="none" stroke-width="0.6" stroke="currentColor" stroke-linecap="round">
+<svg viewBox="0 0 800 800" data-scribble-root>
+	<g
+		fill="none"
+		stroke-width="0.6"
+		stroke="currentColor"
+		stroke-linecap="round"
+	>
 		<path
 			d="M734.55 213.91C677.52 234.62 597.04 243.51 512.29 251.1 431.12 271.05 365.38 311.6 319 385.76 287.48 482.62 268.69 600.46 255.27 703.86 246.91 753.28 234.58 725.57 213.87 618.74 193.16 482.34 166.03 374.48 138.49 330.27 116.02 353.81 102.49 420.88 106.86 494.24 126.1 569.82 169.87 615.84 235.87 631.13 305.44 636.11 377.52 624.11 434.55 603.4 457.76 582.69 448.62 555.23 415.79 514.35 361.68 463.17 305.9 384.83 260.87 282.1 206.38 137.09 191.15 132.61 217.05 318.74 237.76 425.57 266.83 461.67 304.98 427.43 346.95 339.21 403.43 243.34 472.98 173.62 545.16 126.6 622.9 118.38 692.2 134.31 740.22 162.62 757.76 193.19 734.57 213.9Q734.55 213.91 734.55 213.91"
 			opacity="0.58"></path>
@@ -39,3 +44,84 @@
 			opacity="0.56"></path>
 	</g>
 </svg>
+
+<script>
+	const roots = document.querySelectorAll("svg[data-scribble-root]");
+	const prefersReducedMotion = window.matchMedia(
+		"(prefers-reduced-motion: reduce)",
+	).matches;
+
+	if (!prefersReducedMotion && roots.length > 0) {
+		const random = (seed: number) => {
+			const value = Math.sin(seed * 12.9898) * 43758.5453;
+			return value - Math.floor(value);
+		};
+
+		for (const root of roots) {
+			const svg = root as SVGSVGElement;
+			if (svg.dataset.scribbleAnimated === "true") {
+				continue;
+			}
+
+			svg.dataset.scribbleAnimated = "true";
+
+			const lines = Array.from(svg.querySelectorAll("path"));
+			const seeds = lines.map((_, index) => index + 1);
+			const frameRate = 12;
+			const frameDuration = 1000 / frameRate;
+			let lastFrame = -1;
+			let raf = 0;
+
+			for (const line of lines) {
+				line.style.transformBox = "fill-box";
+				line.style.transformOrigin = "center";
+				line.style.willChange = "transform, opacity";
+			}
+
+			const tick = (now: number) => {
+				const frame = Math.floor(now / frameDuration);
+
+				if (frame !== lastFrame) {
+					lastFrame = frame;
+
+					for (const [index, line] of lines.entries()) {
+						const seed = seeds[index];
+						const hold = 2 + Math.floor(random(seed * 3.1) * 3);
+						const steppedFrame = Math.floor(frame / hold);
+						const phase = seed * 0.37;
+						const jitterX =
+							(random(steppedFrame * 1.7 + phase) - 0.5) * 3.2;
+						const jitterY =
+							(random(steppedFrame * 2.3 + phase * 1.9) - 0.5) *
+							2.8;
+						const rotation =
+							(random(steppedFrame * 1.1 + phase * 2.7) - 0.5) *
+							3.2;
+						const scale =
+							1 +
+							(random(steppedFrame * 0.8 + phase * 3.7) - 0.5) *
+								0.022;
+						const opacityShift =
+							(random(steppedFrame * 0.9 + phase * 4.1) - 0.5) *
+							0.12;
+						const baseOpacity = Number(
+							line.getAttribute("opacity") ?? "1",
+						);
+
+						line.style.transform = `translate(${jitterX.toFixed(2)}px, ${jitterY.toFixed(2)}px) rotate(${rotation.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+						line.style.opacity = `${Math.max(0.08, Math.min(1, baseOpacity + opacityShift)).toFixed(3)}`;
+					}
+				}
+
+				raf = window.requestAnimationFrame(tick);
+			};
+
+			raf = window.requestAnimationFrame(tick);
+			window.addEventListener(
+				"pagehide",
+				() => window.cancelAnimationFrame(raf),
+				{ once: true },
+			);
+		}
+	}
+</script>
