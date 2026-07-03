@@ -43,7 +43,7 @@ const translation = useTranslation(lang as keyof UIStrings);
 		<HeroPhoto src={`${url}/lucas.webp`} alt={translation("image") ?? ""} />
 	</wrapper>
 	<background
-		class="fixed w-[60rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-primary"
+		class="fixed top-1/2 left-1/2 -z-10 text-primary w-[60rem] origin-center -translate-x-1/2 -translate-y-1/2 scale-100 max-[900px]:scale-[0.88] max-[700px]:scale-[0.8] max-[520px]:scale-[0.72] max-[420px]:scale-[0.64]"
 	>
 		<Scribble />
 	</background>
