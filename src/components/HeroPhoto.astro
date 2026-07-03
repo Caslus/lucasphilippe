@@ -1,0 +1,23 @@
+---
+import photoParallaxScriptUrl from "../scripts/photoParallax.ts?url";
+
+interface Props {
+    src: string;
+    alt: string;
+}
+
+const { src, alt } = Astro.props;
+---
+
+<div
+    data-photo-parallax
+    class="flex shrink-0 justify-center max-md:w-full max-2xsm:hidden [perspective:20rem]"
+>
+    <img
+        src={src}
+        alt={alt}
+        class="mx-auto w-80 rounded-2xl max-sm:w-[min(22rem,90vw)] [transform-style:preserve-3d] motion-safe:transition-transform motion-safe:duration-150 motion-safe:ease-out will-change-transform"
+    />
+</div>
+
+<script type="module" src={photoParallaxScriptUrl}></script>

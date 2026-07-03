@@ -2,6 +2,7 @@
 import Base from "../components/Base.astro";
 import LanguagePicker from "../components/LanguagePicker.astro";
 import Scribble from "../components/Scribble.astro";
+import HeroPhoto from "../components/HeroPhoto.astro";
 
 import { getLangFromUrl, useTranslation } from "../i18n/utils";
 import type { UIStrings } from "../interfaces/i18n";
@@ -15,21 +16,35 @@ const translation = useTranslation(lang as keyof UIStrings);
 
 <Base>
 	<LanguagePicker />
-	<wrapper class="flex justify-center items-center flex-row h-dvh gap-12 max-md:flex-col">
+	<wrapper
+		class="flex justify-center items-center flex-row h-dvh gap-12 max-md:flex-col"
+	>
 		<div class="w-[25rem] max-sm:w-11/12">
-			<code class="text-content-dark text-xs">👋 {translation("greeting")}</code>
-			<h1 class="text-title-dark m-0 font-bold text-3xl">{translation("name")}</h1>
-			<p class="text-content-dark mt-3 leading-tight">{translation("description")}</p>
+			<code class="text-content-dark text-xs"
+				>👋 {translation("greeting")}</code
+			>
+			<h1 class="text-title-dark m-0 font-bold text-3xl">
+				{translation("name")}
+			</h1>
+			<p class="text-content-dark mt-3 leading-tight">
+				{translation("description")}
+			</p>
 			<p class="text-content-dark mt-3">📍 {translation("location")}</p>
 			<links class="flex flex-wrap flex-row gap-4 mt-3 max-2xsm:flex-col">
 				<Social href={github} icon="github" text="github" />
 				<Social href={linkedin} icon="linkedin" text="linkedin" />
-				<Social href={`${url}/${translation("resumeFile")}`} icon="resume" text="resume" />
+				<Social
+					href={`${url}/${translation("resumeFile")}`}
+					icon="resume"
+					text="resume"
+				/>
 			</links>
 		</div>
-		<img src=`${url}/lucas.webp` alt={translation("image")} class="w-80 rounded-2xl max-sm:w-11/12 max-2xsm:hidden" />
+		<HeroPhoto src={`${url}/lucas.webp`} alt={translation("image") ?? ""} />
 	</wrapper>
-	<background class="fixed w-[60rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-primary">
+	<background
+		class="fixed w-[60rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 text-primary"
+	>
 		<Scribble />
 	</background>
 </Base>
