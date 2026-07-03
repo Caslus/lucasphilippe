@@ -18,6 +18,5 @@ export interface UI {
 
 export interface UIStrings {
 	en: UI;
-	pt: UI;
 	jp: UI;
 }
