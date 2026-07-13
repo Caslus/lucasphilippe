@@ -61,7 +61,7 @@
 #title(
   name: name,
   subtitles: (
-    link("mailto:hello@lucasphilippe.com")[hello\@lucasphilippe.com],
+    link("mailto:lucas.phi@pm.me")[lucas.phi\@pm.me],
     "Curitiba, Brazil",
     link("https://www.linkedin.com/in/lucasphi/")[LinkedIn],
     link("https://github.com/Caslus")[Github],
